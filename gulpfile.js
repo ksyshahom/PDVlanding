@@ -34,7 +34,7 @@ export const images = () => {
 }
 
 export const towebp = () => {
-  return gulp.src(["source/img/**/*.{png,jpg}", "!source/img/icon/*.{png,jpg}"])
+  return gulp.src(["source/img/**/*.{png,jpg}", "!source/img/logo/*", "!source/img/service/*"])
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("source/img"));
 }
