@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''),
+  url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff2') format('woff2'),
+  url('../fonts/pt-sans-v17-latin_cyrillic-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+  url('../fonts/pt-sans-v17-latin_cyrillic-700.woff2') format('woff2'),
+  url('../fonts/pt-sans-v17-latin_cyrillic-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''),
+  url('../fonts/exo-2-v20-latin_cyrillic-regular.woff2') format('woff2'),
+  url('../fonts/exo-2-v20-latin_cyrillic-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local(''),
+  url('../fonts/exo-2-v20-latin_cyrillic-600.woff2') format('woff2'),
+  url('../fonts/exo-2-v20-latin_cyrillic-600.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}

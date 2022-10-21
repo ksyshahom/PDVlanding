@@ -1,0 +1,46 @@
+.partners__title {
+  @include h2-m;
+}
+
+.partners__group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.partners__item {
+  width: 50%;
+  text-align: center;
+}
+
+.partners__name {
+  @include h3-m;
+}
+
+.partners__desc {
+  @include text-m;
+}
+
+@media (min-width: $tablet-width) {
+  .partners__title {
+    @include h2-t;
+  }
+
+  .partners__name {
+    @include h3-td;
+  }
+
+  .partners__desc {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .partners__title {
+    @include h2-d;
+  }
+
+  .partners__item {
+    width: 25%;
+  }
+}

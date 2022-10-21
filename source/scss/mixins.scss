@@ -1,0 +1,68 @@
+// h2 on mobile
+@mixin h2-m {
+  margin-top: 0;
+
+  font-family: "Exo 2", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 125%;
+  color: #363738;
+}
+
+// h2 on tablet
+@mixin h2-t {
+  font-size: 44px;
+  line-height: 125%;
+}
+
+// h2 on desktop
+@mixin h2-d {
+  font-size: 48px;
+  line-height: 125%;
+}
+
+// h3 on mobile
+@mixin h3-m {
+  margin-top: 0;
+
+  font-family: "Exo 2", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 135%;
+  color: #363738;
+}
+
+// h3 on tablet & desktop
+@mixin h3-td {
+  font-size: 20px;
+  line-height: 135%;
+}
+
+// text on mobile
+@mixin text-m {
+  margin-top: 0;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #6b6b6c;
+}
+
+// text on tablet & desktop
+@mixin text-td {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin shadow-card {
+  background: #ffffff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

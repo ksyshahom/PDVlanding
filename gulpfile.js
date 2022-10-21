@@ -5,6 +5,28 @@ import htmlmin from 'gulp-htmlmin';
 import { deleteAsync as del } from "del";
 import imagemin, {optipng, mozjpeg, svgo} from 'gulp-imagemin';
 import webp from 'gulp-webp';
+import plumber from 'gulp-plumber';
+import sass from 'gulp-dart-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import minify from 'gulp-csso';
+import svgstore from 'gulp-svgstore';
+
+// Styles
+
+const styles = () => {
+  return gulp.src('source/scss/style.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(gulp.dest('build/css'))
+    .pipe(minify())
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest('build/css'))
+    .pipe(browser.stream());
+}
 
 // HTML
 
@@ -12,6 +34,16 @@ const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build'));
+}
+
+// SVG Sprite
+
+const svgsprite = () => {
+  return gulp.src("source/img/sprite/*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(gulp.dest("build/img"));
 }
 
 // Images
@@ -50,7 +82,9 @@ export const clean = () => {
 export const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**/*"
+    "source/img/**/*",
+    "!source/img/sprite/*",
+    "!source/img/sprite"
   ], {
     base: "source"
   })
@@ -80,14 +114,15 @@ const reload = (done) => {
 
 // Watcher
 const watcher = () => {
+  gulp.watch('source/scss/**/*.scss', gulp.series(styles));
   gulp.watch('source/*.html').on('change', browser.reload);
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
 export default gulp.series(
-  clean, copy, html, server, watcher
+  clean, copy, styles, html, svgsprite, server, watcher
 );
 
 export const build = gulp.series(
-  clean, copy, html
+  clean, copy, styles, html, svgsprite
 );

@@ -1,0 +1,75 @@
+.services {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    z-index: 0;
+
+    height: 126px;
+
+    background-color: $main-color;
+  }
+}
+
+.services__container {
+  position: relative;
+  z-index: 1;
+}
+
+.services__list {
+  @include shadow-card;
+}
+
+.services__name {
+  @include h3-m;
+}
+
+.services__desc {
+  @include text-m;
+}
+
+@media (min-width: $tablet-width) {
+  .services {
+    &::before {
+      display: none;
+    }
+  }
+
+  .services__list {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .services__item {
+    @include shadow-card;
+  }
+
+  .services__name {
+    @include h3-td;
+  }
+
+  .services__desc {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .services__list {
+    @include shadow-card;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .services__item {
+    width: 33%;
+
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

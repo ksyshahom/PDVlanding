@@ -1,0 +1,82 @@
+.team__title {
+  @include h2-m;
+}
+
+.team__list {
+  @include reset-list;
+}
+
+.team__item {
+  @include shadow-card;
+}
+
+.team__name {
+  @include h3-m;
+}
+
+.team__job-title {
+  @include text-m;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    width: 100px;
+    height: 3px;
+
+    background-color: $second-color;
+  }
+}
+
+.team__socials-list {
+  @include reset-list;
+}
+
+.team__socials-link {
+  & svg {
+    fill: #bfbfc7
+  }
+
+  &:focus,
+  &:hover {
+    & svg {
+      fill: $main-color;
+    }
+  }
+
+  &:active {
+    fill: $main-color;
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .team__title {
+    @include h2-t;
+  }
+
+  .team__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .team__item {
+    width: 50%;
+  }
+
+  .team__name {
+    @include h3-td;
+  }
+
+  .team__job-title {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .team__title {
+    @include h2-d;
+  }
+}

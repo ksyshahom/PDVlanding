@@ -1,0 +1,90 @@
+.page-main {
+  font-family: "PT Sans", "Arial", sans-serif;
+  color: #363738;
+}
+
+.page-main__video {
+  padding-bottom: 44px;
+}
+
+.page-main__hero {
+  padding-bottom: 56px;
+}
+
+.page-main__services,
+.page-main__poll,
+.page-main__clients,
+.page-main__steps,
+.page-main__partners,
+.page-main__contacts,
+.page-main__contact-us {
+  margin-bottom: 64px;
+}
+
+.page-main__advantages {
+  margin-bottom: 72px;
+}
+
+.page-main__works {
+  margin-bottom: 68px;
+}
+
+.page-main__team {
+  margin-bottom: 116px;
+}
+
+@media (min-width: $tablet-width) {
+  .page-main__hero {
+    padding-bottom: 0;
+    margin-bottom: 41px;
+  }
+
+  .page-main__video {
+    padding-bottom: 71px;
+  }
+
+  .page-main__services,
+  .page-main__poll,
+  .page-main__works,
+  .page-main__clients,
+  .page-main__steps,
+  .page-main__contacts,
+  .page-main__contact-us {
+    margin-bottom: 88px;
+  }
+
+  .page-main__advantages,
+  .page-main__partners,
+  .page-main__team {
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-main__hero {
+    margin-bottom: 67px;
+  }
+
+  .page-main__services,
+  .page-main__poll,
+  .page-main__contact-us {
+    margin-bottom: 100px;
+  }
+
+  .page-main__advantages,
+  .page-main__works,
+  .page-main__clients,
+  .page-main__steps,
+  .page-main__video {
+    margin-bottom: 120px;
+  }
+
+  .page-main__partners,
+  .page-main__team {
+    margin-bottom: 130px;
+  }
+
+  .page-main__contacts {
+    margin-bottom: 140px;
+  }
+}

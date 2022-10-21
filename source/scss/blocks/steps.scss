@@ -1,0 +1,35 @@
+.steps__title {
+  @include h2-m;
+}
+
+.steps__item {
+  @include shadow-card;
+}
+
+.steps__name {
+  @include h3-m;
+}
+
+.steps__desc {
+  @include text-m;
+}
+
+@media (min-width: $tablet-width) {
+  .steps__title {
+    @include h2-t;
+  }
+
+  .steps__name {
+    @include h3-td;
+  }
+
+  .steps__desc {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .steps__title {
+    @include h2-d;
+  }
+}

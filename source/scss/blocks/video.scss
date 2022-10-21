@@ -1,0 +1,23 @@
+.video__title {
+  @include h2-m;
+}
+
+.video__text {
+  @include text-m;
+}
+
+@media (min-width: $tablet-width) {
+  .video__title {
+    @include h2-t;
+  }
+
+  .video__text {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .video__title {
+    @include h2-d;
+  }
+}

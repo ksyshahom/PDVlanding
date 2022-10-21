@@ -1,0 +1,65 @@
+.works__title {
+  @include h2-m;
+}
+
+.works__text {
+  @include text-m;
+}
+
+.works__slide {
+  @include shadow-card;
+}
+
+.works__name {
+  @include h3-m;
+}
+
+.works__desc {
+  @include text-m;
+}
+
+.works__price {
+  @include h3-m;
+  width: fit-content;
+
+  font-size: 15px;
+
+  border-bottom: 2px $second-color solid;
+}
+
+@media (min-width: $tablet-width) {
+  .works__title {
+    @include h2-t;
+  }
+
+  .works__text {
+    @include text-td;
+  }
+
+  .works__name {
+    @include h3-td;
+  }
+
+  .works__desc {
+    @include text-td;
+  }
+
+  .works__price {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .works__title {
+    @include h2-d;
+  }
+
+  .works__slider {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .works__slide {
+    width: 393px;
+  }
+}

@@ -1,0 +1,74 @@
+.contacts__title {
+  @include h2-m;
+}
+
+.contacts__list {
+  @include reset-list;
+}
+
+.contacts__name {
+  @include text-m;
+}
+
+.contacts__value {
+  @include h3-m;
+
+  &:focus,
+  &:hover {
+    color: $main-color;
+  }
+
+  &:active {
+    opacity: 0.6;
+  };
+}
+
+.contacts__table {
+  background-color: #f9f9fb;
+  border-collapse: collapse;
+}
+
+.contacts__table-row {
+  display: block;
+}
+
+.contacts__table-key {
+  @include text-m;
+  display: block;
+}
+
+.contacts__table-value {
+  @include h3-m;
+}
+
+@media (min-width: $tablet-width) {
+  .contacts__title {
+    @include h2-t;
+  }
+
+  .contacts__name {
+    @include text-td;
+  }
+
+  .contacts__value {
+    @include h3-td;
+  }
+
+  .contacts__table-row {
+    display: table-row;
+  }
+
+  .contacts__table-key {
+    @include text-td;
+  }
+
+  .contacts__table-value {
+    @include h3-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contacts__title {
+    @include h2-d;
+  }
+}

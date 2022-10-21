@@ -1,0 +1,161 @@
+.contact-us__wrapper {
+  margin-bottom: 64px;
+  background-color: $main-color;
+}
+
+.contact-us__form-wrapper {
+   color: #ffffff;
+ }
+
+.contact-us__title {
+  @include h2-m;
+  color: #ffffff;
+}
+
+.contact-us__label {
+  font-size: 15px;
+  line-height: 125%;
+
+  &--textarea {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      height: 1px;
+
+      background-color: #ffffff;
+      opacity: 0.2;
+      box-shadow: 0 20px 0 0 #ffffff,
+      0 40px 0 0 #ffffff,
+      0 60px 0 0 #ffffff,
+      0 80px 0 0 #ffffff;
+    }
+  }
+}
+
+.contact-us__form-textarea {
+  width: 100%;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 125%;
+  color: #ffffff;
+
+  background-color: transparent;
+  border: none;
+
+  resize: none;
+
+  &::placeholder {
+    color: #ffffff;
+  }
+}
+
+.contact-us__form-button {
+  font-family: "Exo 2", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 150%;
+  color: $main-color;
+
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+
+.contact-us__data-view-title {
+  @include h2-m;
+}
+
+.contact-us__data-list {
+  @include reset-list;
+}
+
+.contact-us__data-name {
+  @include h3-m;
+}
+
+.contact-us__data-value {
+  @include text-m;
+}
+
+.contact-us__data-link {
+  color: #363738;
+  text-decoration: underline ;
+}
+
+.contact-us__pic-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: $tablet-width) {
+  .contact-us__wrapper {
+    margin-bottom: 88px;
+  }
+
+  .contact-us__title {
+    @include h2-t;
+  }
+
+  .contact-us__label {
+    font-size: 16px;
+  }
+
+  .contact-us__form-textarea {
+    font-size: 16px;
+  }
+
+  .contact-us__form-button {
+    font-size: 16px;
+  }
+
+  .contact-us__data-view-title {
+    @include h2-t;
+  }
+
+  .contact-us__data-name {
+    @include h3-td;
+  }
+
+  .contact-us__data-value {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contact-us__wrapper {
+    display: flex;
+    margin-bottom: 120px;
+  }
+
+  .contact-us__form-wrapper {
+    flex-grow: 1;
+  }
+
+  .contact-us__title {
+    @include h2-d;
+  }
+
+  .contact-us__form-pic {
+    width: 541px;
+    flex-shrink: 0;
+
+    background-image: url("../img/form-bg.jpg");
+    background-image: -webkit-image-set(
+      url("../img/form-bg.jpg") 1x,
+      url("../img/form-bg@2x.jpg") 2x);
+    background-image: image-set(
+      url("../img/form-bg.jpg") 1x,
+      url("../img/form-bg@2x.jpg") 2x);
+    background-position: center;
+  }
+
+  .contact-us__data-view-title {
+    @include h2-d;
+  }
+}

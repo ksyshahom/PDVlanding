@@ -1,0 +1,47 @@
+.advantages__title {
+  @include h2-m;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.advantages__list {
+  @include reset-list;
+}
+
+.advantages__name {
+  @include h3-m;
+}
+
+.advantages__desc {
+  @include text-m;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages__title {
+    @include h2-t;
+    color: #ffffff;
+  }
+
+  .advantages__name {
+    @include h3-td;
+  }
+
+  .advantages__desc {
+    @include text-td;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages__title {
+    @include h2-d;
+  }
+
+  .advantages__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .advantages__item {
+    width: 50%;
+  }
+}
