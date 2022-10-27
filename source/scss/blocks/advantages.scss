@@ -2,14 +2,55 @@
   @include h2-m;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 41px;
 }
 
 .advantages__list {
   @include reset-list;
 }
 
+.advantages__item {
+  display: flex;
+  margin-bottom:20px;
+}
+
+.advantages__icon {
+  display: block;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  margin-right: 16px;
+
+  background-color: #e9e9ec;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+
+  &--lock {
+    background-image: url("../img/service/lock.svg");
+  }
+
+  &--coin {
+    background-image: url("../img/service/coin.svg");
+  }
+
+  &--form {
+    background-image: url("../img/service/form.svg");
+  }
+
+  &--world {
+    background-image: url("../img/service/world.svg");
+  }
+}
+
+.advantages__text-wrapper {
+  padding-top: 1px;
+}
+
 .advantages__name {
   @include h3-m;
+  margin-bottom: 6px;
 }
 
 .advantages__desc {
@@ -17,13 +58,69 @@
 }
 
 @media (min-width: $tablet-width) {
+  .advantages__header {
+    position: relative;
+    padding-top: 130px;
+    padding-bottom: 142px;
+    margin-bottom: 50px;
+
+    background-image: url("../img/service/why-us-tablet.png"),
+      url("../img/why-us-pic-tablet.jpg");
+    background-image: url("../img/service/why-us-tablet.png"),
+      -webkit-image-set(
+      url("../img/why-us-pic-tablet.jpg") 1x,
+      url("../img/why-us-pic-tablet@2x.jpg") 2x);
+    background-image: url("../img/service/why-us-tablet.png"),
+      image-set(
+      url("../img/why-us-pic-tablet.jpg") 1x,
+      url("../img/why-us-pic-tablet@2x.jpg") 2x);
+    background-repeat: no-repeat;
+    background-position: top center, top right calc((100vw - $tablet-width) / 2);
+    background-size: auto 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      width: calc((100vw - $tablet-width) / 2 + 260px);
+
+      background-color: $main-color;
+    }
+  }
+
   .advantages__title {
     @include h2-t;
+    position: relative;
+
+    width: $tablet-width;
+    padding-left: 39px;
+    padding-right: 39px + 300px;
+    margin: 0 auto;
+
     color: #ffffff;
+  }
+
+  .advantages__item {
+    margin-bottom: 30px;
+  }
+
+  .advantages__icon {
+    width: 88px;
+    height: 88px;
+    margin-right: 48px;
+  }
+
+  .advantages__text-wrapper {
+    padding-top: 6px;
+    padding-right: 150px;
   }
 
   .advantages__name {
     @include h3-td;
+    margin-bottom: 9px;
   }
 
   .advantages__desc {
@@ -32,16 +129,54 @@
 }
 
 @media (min-width: $desktop-width) {
+  .advantages__header {
+    padding-top: 160px;
+    padding-bottom: 174px;
+    margin-bottom: 72px;
+
+    background-image: url("../img/service/why-us-desktop.png"),
+    url("../img/why-us-pic-desktop.jpg");
+    background-image: url("../img/service/why-us-desktop.png"),
+    -webkit-image-set(
+        url("../img/why-us-pic-desktop.jpg") 1x,
+        url("../img/why-us-pic-desktop@2x.jpg") 2x);
+    background-image: url("../img/service/why-us-desktop.png"),
+    image-set(
+        url("../img/why-us-pic-desktop.jpg") 1x,
+        url("../img/why-us-pic-desktop@2x.jpg") 2x);
+    background-position: top left calc((100vw - $desktop-width) / 2 + 419px);
+    background-size: auto 100%, auto 100%;
+
+    &:before {
+      width: calc((100vw - $desktop-width) / 2 + 420px);
+    }
+  }
+
   .advantages__title {
     @include h2-d;
+    width: $desktop-width;
+    padding-left: 100px;
+    padding-right: 100px + 800px;
   }
 
   .advantages__list {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 64px;
   }
 
   .advantages__item {
     width: 50%;
+    margin-bottom: 42px;
+  }
+
+  .advantages__icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 40px;
+  }
+
+  .advantages__text-wrapper {
+    padding-top: 0;
   }
 }

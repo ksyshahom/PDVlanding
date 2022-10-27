@@ -7,6 +7,10 @@
   padding-bottom: 44px;
 }
 
+.page-main__advantages {
+  margin-bottom: 51px;
+}
+
 .page-main__hero {
   padding-bottom: 56px;
 }
@@ -19,10 +23,6 @@
 .page-main__contacts,
 .page-main__contact-us {
   margin-bottom: 64px;
-}
-
-.page-main__advantages {
-  margin-bottom: 72px;
 }
 
 .page-main__works {
@@ -43,6 +43,10 @@
     padding-bottom: 71px;
   }
 
+  .page-main__advantages {
+    margin-bottom: 81px;
+  }
+
   .page-main__services,
   .page-main__poll,
   .page-main__works,
@@ -53,14 +57,20 @@
     margin-bottom: 88px;
   }
 
-  .page-main__advantages,
-  .page-main__partners,
+  .page-main__partners {
+    margin-bottom: 96px;
+  }
+
   .page-main__team {
-    margin-bottom: 100px;
+    margin-bottom: 76px;
   }
 }
 
 @media (min-width: $desktop-width) {
+  .page-main__advantages {
+    margin-bottom:58px;
+  }
+
   .page-main__hero {
     margin-bottom: 67px;
   }
@@ -71,7 +81,10 @@
     margin-bottom: 100px;
   }
 
-  .page-main__advantages,
+  .page-main__team {
+    margin-bottom: 108px;
+  }
+
   .page-main__works,
   .page-main__clients,
   .page-main__steps,
@@ -79,9 +92,8 @@
     margin-bottom: 120px;
   }
 
-  .page-main__partners,
-  .page-main__team {
-    margin-bottom: 130px;
+  .page-main__partners {
+    margin-bottom: 125px;
   }
 
   .page-main__contacts {

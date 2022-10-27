@@ -2,16 +2,69 @@
   @include h2-m;
 }
 
+.steps__list {
+  @include reset-list;
+  padding-left: 32px;
+  padding-right: 6px;
+}
+
 .steps__item {
   @include shadow-card;
+  position: relative;
+
+  padding: 24px 18px 27px 44px;
+  margin-bottom: 14px;
+
+  border-radius: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 49px;
+    left: -14px;
+
+    width: 45px;
+    height: 76px;
+
+    background-image: url("../img/service/steps-mobile.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.steps__number {
+  position: absolute;
+  top: 61px;
+  left: -32px;
+
+  display: block;
+  width: 52px;
+  height: 52px;
+  padding-top: 7px;
+  padding-left: 19px;
+
+  font-family: "Exo 2", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 125%;
+  color: #ffffff;
+
+  border-radius: 50%;
+  background-color: $main-color;
 }
 
 .steps__name {
   @include h3-m;
+
+  margin-bottom: 11px;
 }
 
 .steps__desc {
   @include text-m;
+  margin-bottom: 0;
 }
 
 @media (min-width: $tablet-width) {
@@ -19,8 +72,54 @@
     @include h2-t;
   }
 
+  .steps__list {
+    padding-left: 48px;
+    padding-right: 0;
+  }
+
+  .steps__item {
+    padding: 40px 40px 40px 80px;
+    margin-bottom: 15px;
+
+    &:before {
+      top: 69px;
+
+      width: 56px;
+      height: 114px;
+
+      background-image: url("../img/service/steps-tablet.png");
+    }
+  }
+
+  .steps__number {
+    top: 89px;
+    left: -48px;
+
+    width: 68px;
+    height: 68px;
+    padding-top: 10px;
+    padding-left: 24px;
+
+    font-size: 38px;
+  }
+
   .steps__name {
     @include h3-td;
+    position: relative;
+
+    margin-bottom: 43px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+
+      width: 86px;
+      height: 3px;
+
+      background-color: $second-color;
+    }
   }
 
   .steps__desc {
@@ -31,5 +130,58 @@
 @media (min-width: $desktop-width) {
   .steps__title {
     @include h2-d;
+  }
+
+  .steps__list {
+    padding-right: 7px;
+  }
+
+  .steps__item {
+    display: flex;
+    padding: 30px 130px 34px 97px;
+    margin-bottom: 24px;
+  }
+
+  .steps__image {
+    width: 331px;
+    height: 181px;
+    flex-shrink: 0;
+    margin-right: 56px;
+
+    border-radius: 4px;
+
+    &--1 {
+      background-image: url("../img/step1.jpg");
+      background-image: -webkit-image-set(
+          url("../img/step1.jpg") 1x,
+          url("../img/step1@2x.jpg") 2x);
+      background-image: image-set(
+          url("../img/step1.jpg") 1x,
+          url("../img/step1@2x.jpg") 2x);
+    }
+
+    &--2 {
+      background-image: url("../img/step2.jpg");
+      background-image: -webkit-image-set(
+          url("../img/step2.jpg") 1x,
+          url("../img/step2@2x.jpg") 2x);
+      background-image: image-set(
+          url("../img/step2.jpg") 1x,
+          url("../img/step2@2x.jpg") 2x);
+    }
+
+    &--3 {
+      background-image: url("../img/step3.jpg");
+      background-image: -webkit-image-set(
+          url("../img/step3.jpg") 1x,
+          url("../img/step3@2x.jpg") 2x);
+      background-image: image-set(
+          url("../img/step3.jpg") 1x,
+          url("../img/step3@2x.jpg") 2x);
+    }
+  }
+
+  .steps__name {
+    margin-bottom: 40px;
   }
 }

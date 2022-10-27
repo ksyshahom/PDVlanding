@@ -1,23 +1,112 @@
 .video__title {
   @include h2-m;
+  margin-bottom: 28px;
 }
 
 .video__text {
   @include text-m;
+  margin-bottom: 35px;
+}
+
+.video__video {
+  position: relative;
+
+  height: 340px;
+  background-image: url("../img/video-cover-mobile.jpg");
+  background-image: -webkit-image-set(
+      url("../img/video-cover-mobile.jpg") 1x,
+      url("../img/video-cover-mobile@2x.jpg") 2x
+  );
+  background-image: image-set(
+      url("../img/video-cover-mobile.jpg") 1x,
+      url("../img/video-cover-mobile@2x.jpg") 2x
+  );
+  background-size: cover;
+  background-position: center;
+}
+
+.video__play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/service/play.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
 }
 
 @media (min-width: $tablet-width) {
   .video__title {
     @include h2-t;
+    margin-bottom: 21px;
   }
 
   .video__text {
     @include text-td;
+    margin-bottom: 42px;
+  }
+
+  .video__video {
+    height: 433px;
+
+    background-image: url("../img/video-cover-tablet.jpg");
+    background-image: -webkit-image-set(
+        url("../img/video-cover-tablet.jpg") 1x,
+        url("../img/video-cover-tablet@2x.jpg") 2x
+    );
+    background-image: image-set(
+        url("../img/video-cover-tablet.jpg") 1x,
+        url("../img/video-cover-tablet@2x.jpg") 2x
+    );
+  }
+
+  .video__play-btn {
+    width: 108px;
+    height: 108px;
+    margin-left: -54px;
+    margin-top: -54px;
   }
 }
 
 @media (min-width: $desktop-width) {
   .video__title {
     @include h2-d;
+  }
+
+  .video__text {
+    width: 860px;
+    margin-bottom: 33px;
+  }
+
+  .video__video {
+    height: 621px;
+
+    background-image: url("../img/video-cover-desktop.jpg");
+    background-image: -webkit-image-set(
+        url("../img/video-cover-desktop.jpg") 1x,
+        url("../img/video-cover-desktop@2x.jpg") 2x
+    );
+    background-image: image-set(
+        url("../img/video-cover-desktop.jpg") 1x,
+        url("../img/video-cover-desktop@2x.jpg") 2x
+    );
   }
 }
