@@ -12,17 +12,20 @@
   position: relative;
 
   height: 340px;
-  background-image: url("../img/video-cover-mobile.jpg");
-  background-image: -webkit-image-set(
-      url("../img/video-cover-mobile.jpg") 1x,
-      url("../img/video-cover-mobile@2x.jpg") 2x
-  );
-  background-image: image-set(
-      url("../img/video-cover-mobile.jpg") 1x,
-      url("../img/video-cover-mobile@2x.jpg") 2x
-  );
-  background-size: cover;
-  background-position: center;
+
+  &--js {
+    background-image: url("../img/video-cover-mobile.jpg");
+    background-image: -webkit-image-set(
+        url("../img/video-cover-mobile.jpg") 1x,
+        url("../img/video-cover-mobile@2x.jpg") 2x
+    );
+    background-image: image-set(
+        url("../img/video-cover-mobile.jpg") 1x,
+        url("../img/video-cover-mobile@2x.jpg") 2x
+    );
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .video__play-btn {
@@ -42,6 +45,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
+  cursor: pointer;
 
   &:focus,
   &:hover {
@@ -51,6 +55,13 @@
   &:active {
     opacity: 0.4;
   }
+}
+
+.video__iframe {
+  width: 100%;
+  height: 100%;
+
+  border: none;
 }
 
 @media (min-width: $tablet-width) {
@@ -67,15 +78,17 @@
   .video__video {
     height: 433px;
 
-    background-image: url("../img/video-cover-tablet.jpg");
-    background-image: -webkit-image-set(
-        url("../img/video-cover-tablet.jpg") 1x,
-        url("../img/video-cover-tablet@2x.jpg") 2x
-    );
-    background-image: image-set(
-        url("../img/video-cover-tablet.jpg") 1x,
-        url("../img/video-cover-tablet@2x.jpg") 2x
-    );
+    &--js {
+      background-image: url("../img/video-cover-tablet.jpg");
+      background-image: -webkit-image-set(
+          url("../img/video-cover-tablet.jpg") 1x,
+          url("../img/video-cover-tablet@2x.jpg") 2x
+      );
+      background-image: image-set(
+          url("../img/video-cover-tablet.jpg") 1x,
+          url("../img/video-cover-tablet@2x.jpg") 2x
+      );
+    }
   }
 
   .video__play-btn {
@@ -99,14 +112,16 @@
   .video__video {
     height: 621px;
 
-    background-image: url("../img/video-cover-desktop.jpg");
-    background-image: -webkit-image-set(
-        url("../img/video-cover-desktop.jpg") 1x,
-        url("../img/video-cover-desktop@2x.jpg") 2x
-    );
-    background-image: image-set(
-        url("../img/video-cover-desktop.jpg") 1x,
-        url("../img/video-cover-desktop@2x.jpg") 2x
-    );
+    &--js {
+      background-image: url("../img/video-cover-desktop.jpg");
+      background-image: -webkit-image-set(
+          url("../img/video-cover-desktop.jpg") 1x,
+          url("../img/video-cover-desktop@2x.jpg") 2x
+      );
+      background-image: image-set(
+          url("../img/video-cover-desktop.jpg") 1x,
+          url("../img/video-cover-desktop@2x.jpg") 2x
+      );
+    }
   }
 }

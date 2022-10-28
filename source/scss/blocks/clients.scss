@@ -45,16 +45,56 @@
 }
 
 .clients__toggle {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin-bottom: -1px;
 
-  background-color: #0b7572;
   border-radius: 2px;
+  background-color: #0b7572;
+
+  &--opened {
+    & .clients__number {
+      display: block;
+    }
+  }
+}
+
+.clients__toggle-btn {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 10px;
+
+  width: 25px;
+  height: 25px;
+  padding: 0;
+
+  background-color: transparent;
+  background-image: url("../img/service/icon-down.svg");
+  background-size: 43%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .clients__number {
+  position: relative;
+
   display: none;
-  margin: 0;
+  margin-right: 50px;
   padding: 7px 16px;
 
   font-family: "Exo 2", "Arial", sans-serif;
@@ -63,8 +103,40 @@
   line-height: 150%;
   color: #ffffff;
 
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+
+    height: 1px;
+
+    background-color: #ffffff;
+    opacity: 0.5;
+  }
+
   &--active {
     display: block;
+    order: -1;
+
+    &:before {
+      display: none;
+    }
   }
 }
 

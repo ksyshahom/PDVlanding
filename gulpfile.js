@@ -11,6 +11,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import minify from 'gulp-csso';
 import svgstore from 'gulp-svgstore';
+import terser from 'gulp-terser';
 
 // Styles
 
@@ -44,6 +45,18 @@ const svgsprite = () => {
       inlineSvg: true
     }))
     .pipe(gulp.dest("build/img"));
+}
+
+// JS
+
+const js = () => {
+  return gulp.src('source/scripts/*.js')
+    .pipe(terser({
+      'format': {
+        'comments': false,
+      },
+    }))
+    .pipe(gulp.dest('build/scripts'));
 }
 
 // Images
@@ -117,12 +130,14 @@ const watcher = () => {
   gulp.watch('source/scss/**/*.scss', gulp.series(styles));
   gulp.watch('source/*.html').on('change', browser.reload);
   gulp.watch('source/*.html', gulp.series(html, reload));
+  gulp.watch('source/scripts/*.js').on('change', browser.reload);
+  gulp.watch('source/scripts/*.js', gulp.series(js, reload));
 }
 
 export default gulp.series(
-  clean, copy, styles, html, svgsprite, server, watcher
+  clean, copy, styles, html, js, svgsprite, server, watcher
 );
 
 export const build = gulp.series(
-  clean, copy, styles, html, svgsprite
+  clean, copy, styles, html, js, svgsprite
 );

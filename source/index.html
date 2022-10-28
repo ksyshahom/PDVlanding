@@ -9,7 +9,6 @@
 
   <link rel="preload" href="fonts/pt-sans-v17-latin_cyrillic-regular.woff2" as="font">
   <link rel="preload" href="fonts/exo-2-v20-latin_cyrillic-600.woff2" as="font">
-
   <link rel="stylesheet" href="css/style.min.css">
 
 </head>
@@ -93,9 +92,9 @@
               </span>
             </label>
           </li>
-          <li class="poll__option poll__option--active">
+          <li class="poll__option">
             <label class="poll__label">
-              <input class="visually-hidden" type="radio" name="sphere" value="delivery" checked>
+              <input class="visually-hidden" type="radio" name="sphere" value="delivery">
               <span class="poll__radio-mark"></span>
               <span class="poll__name">Я поставляю товары</span>
               <span class="poll__desc">
@@ -265,9 +264,12 @@
             </div>
           </div>
           <div class="clients__toggle">
-            <p class="clients__number clients__number--active">Клиент №1</p>
-            <p class="clients__number">Клиент №2</p>
-            <p class="clients__number">Клиент №3</p>
+            <button class="clients__toggle-btn" type="button">
+              <span class="visually-hidden">Изменить клиента</span>
+            </button>
+            <button class="clients__number clients__number--active" type="button">Клиент №1</button>
+            <button class="clients__number" type="button">Клиент №2</button>
+            <button class="clients__number" type="button">Клиент №3</button>
           </div>
           <table class="clients__table">
             <tr>
@@ -786,19 +788,21 @@
       <div class="contact-us__wrapper">
         <div class="contact-us__form-wrapper">
           <h2 class="contact-us__title">Свяжитесь с нами</h2>
-          <form class="contact-us__form" method="post" action="https://echo.htmlacademy.ru/">
+          <form class="contact-us__form" id="form1" method="post" action="https://echo.htmlacademy.ru/">
             <label class="contact-us__label contact-us__label--textarea">
               <textarea class="contact-us__form-textarea" name="task" placeholder="Опишите задачу..."
-                rows="5"></textarea>
+                rows="5" required></textarea>
               <span class="visually-hidden">Опишите задачу</span>
             </label>
             <label class="contact-us__label contact-us__label--tz">
-              <input class="visually-hidden" type="file" name="tz" accept=".pdf,.doc,.docx,.txt,.md">
-              Прикрипите ТЗ
+              <input class="contact-us__input contact-us__input--tz visually-hidden" type="file" name="tz"
+                accept=".pdf,.doc,.docx,.txt,.md">
+              <span class="contact-us__label-text--tz">Прикрепите ТЗ</span>
             </label>
             <label class="contact-us__label contact-us__label--pics">
-              <input class="visually-hidden" type="file" name="pics" accept="image/*" multiple>
-              Добавьте фото товара
+              <input class="contact-us__input contact-us__input--pics visually-hidden" type="file" name="pics"
+                accept="image/*" multiple>
+              <span class="contact-us__label-text--pics">Добавьте фото товара</span>
             </label>
             <button class="contact-us__form-button" type="submit">Отправить заявку</button>
           </form>
@@ -806,46 +810,30 @@
         <div class="contact-us__form-pic"></div>
       </div>
 
-      <div class="contact-us__data-view">
+      <div class="contact-us__data-view" id="data-view">
         <p class="contact-us__data-view-title">Ваши данные</p>
         <div class="contact-us__data-wrapper">
           <ul class="contact-us__data-list">
             <li class="contact-us__data-item">
               <p class="contact-us__data-name">Описание задачи</p>
-              <p class="contact-us__data-value">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Elit duis tristique sollicitudin nibh sit amet. Ultrices eros in cursus turpis
-                massa tincidunt. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Pharetra convallis
-                posuere morbi leo urna. Eget sit amet tellus cras adipiscing.
-              </p>
+              <p class="contact-us__data-value contact-us__data-value--textarea"></p>
             </li>
             <li class="contact-us__data-item">
               <p class="contact-us__data-name">Техническое задание</p>
               <p class="contact-us__data-value contact-us__data-value--tz">
-                <a class="contact-us__data-link" href="#" target="_blank">ТЗ_задачи.doc</a>
+                Файлов нет
               </p>
             </li>
             <li class="contact-us__data-item contact-us__data-item--pics">
               <p class="contact-us__data-name contact-us__data-name--pics">Фотографии товара</p>
               <div class="contact-us__data-value">
                 <div class="contact-us__pic-list">
-                  <div class="contact-us__pic-item">
-                    <img class="contact-us__pic-img" src="img/service/file1.jpg" alt="IMG12344.jpg">
-                    <a class="contact-us__data-link" href="#" target="_blank">IMG12344.jpg</a>
-                  </div>
-                  <div class="contact-us__pic-item">
-                    <img class="contact-us__pic-img" src="img/service/file2.jpg" alt="IMG12344.jpg">
-                    <a class="contact-us__data-link" href="#" target="_blank">IMG12344.jpg</a>
-                  </div>
-                  <div class="contact-us__pic-item">
-                    <img class="contact-us__pic-img" src="img/service/file3.jpg" alt="IMG12344.jpg">
-                    <a class="contact-us__data-link" href="#" target="_blank">IMG12344.jpg</a>
-                  </div>
+                  Файлов нет
                 </div>
               </div>
             </li>
           </ul>
-          <button class="contact-us__data-confirm">Подтвердить информацию</button>
+          <button class="contact-us__data-confirm" type="submit" form="form1">Подтвердить информацию</button>
         </div>
       </div>
     </section>
@@ -859,12 +847,17 @@
         Eget sit amet tellus cras adipiscing.
       </p>
       <div class="video__video">
-        <button class="video__play-btn" type="button">
-          <span class="visually-hidden">Воспроизвести видео</span>
-        </button>
+        <iframe class="video__iframe" src="https://www.youtube.com/embed/i5T6Fnbq34c" title="Видео о нашей работе" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
 
   </main>
+
+<script src="scripts/poll.js"></script>
+<script src="scripts/clients.js"></script>
+<script src="scripts/partners-slider.js"></script>
+<script src="scripts/contact-us.js"></script>
+<script src="scripts/video.js"></script>
+
 </body>
 </html>
