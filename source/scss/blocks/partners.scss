@@ -13,6 +13,10 @@
   }
 }
 
+.no-js .partners__group {
+  display: flex;
+}
+
 .partners__item {
   display: flex;
   flex-direction: column;
@@ -50,6 +54,10 @@
 
 .partners__pagination {
   margin-top: -8px;
+}
+
+.no-js .partners__pagination {
+  display: none;
 }
 
 @media (min-width: $tablet-width) {

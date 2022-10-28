@@ -1,5 +1,4 @@
 var v = document.querySelector(".video__video");
-v.classList.add("video__video--js");
 v.innerHTML = "";
 
 var btn = document.createElement("button");
@@ -20,7 +19,6 @@ btn.addEventListener("click", function(){
   iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
   iframe.setAttribute("allowfullscreen", "");
   iframe.classList.add("video__iframe");
-  v.classList.remove("video__video--js");
   v.innerHTML = "";
   v.appendChild(iframe);
 });

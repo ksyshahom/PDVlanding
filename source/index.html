@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,6 +9,11 @@
 
   <link rel="preload" href="fonts/pt-sans-v17-latin_cyrillic-regular.woff2" as="font">
   <link rel="preload" href="fonts/exo-2-v20-latin_cyrillic-600.woff2" as="font">
+
+  <script>
+    document.documentElement.classList.remove("no-js");
+  </script>
+
   <link rel="stylesheet" href="css/style.min.css">
 
 </head>
@@ -26,15 +31,18 @@
           </p>
           <a class="hero__more-link" href="#steps">Узнать больше</a>
         </div>
-        <picture>
-          <source type="image/webp" media="(min-width: 1440px)" srcset="img/hero-desktop.webp, img/hero-desktop@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 768px)" srcset="img/hero-tablet.webp, img/hero-tablet@2x.webp 2x">
-          <source type="image/webp" srcset="img/hero-mobile.webp, img/hero-mobile@2x.webp 2x">
+        <div class="hero__img-wrapper">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/hero-desktop.webp, img/hero-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/hero-tablet.webp, img/hero-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/hero-mobile.webp, img/hero-mobile@2x.webp 2x">
 
-          <source media="(min-width: 1440px)" srcset="img/hero-desktop.png, img/hero-desktop@2x.png 2x">
-          <source media="(min-width: 768px)" srcset="img/hero-tablet.png, img/hero-tablet@2x.png 2x">
-          <img class="hero__img" src="img/hero-mobile.png" srcset="img/hero-mobile@2x.png 2x" alt="Поставщик Дальнего Востока">
-        </picture>
+            <source media="(min-width: 1440px)" srcset="img/hero-desktop.png, img/hero-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/hero-tablet.png, img/hero-tablet@2x.png 2x">
+            <img class="hero__img" src="img/hero-mobile.png" srcset="img/hero-mobile@2x.png 2x"
+              alt="Поставщик Дальнего Востока">
+          </picture>
+        </div>
       </div>
     </section>
 
@@ -183,7 +191,7 @@
               <source media="(min-width: 1440px)" srcset="img/works-1-desktop.jpg, img/works-1-desktop@2x.jpg">
               <source media="(min-width: 768px)" srcset="img/works-1-tablet.webp, img/works-1-tablet@2x.jpg">
               <img class="works__img" src="img/works-1-mobile.jpg" srcset="img/works-1-mobile@2x.jpg 2x"
-                alt="Станки и оборудование">
+                alt="Станки и оборудование" loading="lazy">
             </picture>
             <div class="works__text-wrapper">
               <p class="works__name">Станки и оборудование</p>
@@ -202,7 +210,7 @@
               <source media="(min-width: 1440px)" srcset="img/works-2-desktop.jpg, img/works-2-desktop@2x.jpg">
               <source media="(min-width: 768px)" srcset="img/works-2-tablet.webp, img/works-2-tablet@2x.jpg">
               <img class="works__img" src="img/works-1-mobile.jpg" srcset="img/works-1-mobile@2x.jpg 2x"
-                   alt="Компоненты и запчасти">
+                   alt="Компоненты и запчасти" loading="lazy">
             </picture>
             <div class="works__text-wrapper">
               <p class="works__name">Компоненты и запчасти</p>
@@ -221,7 +229,26 @@
               <source media="(min-width: 1440px)" srcset="img/works-3-desktop.jpg, img/works-3-desktop@2x.jpg">
               <source media="(min-width: 768px)" srcset="img/works-1-tablet.webp, img/works-1-tablet@2x.jpg">
               <img class="works__img" src="img/works-1-mobile.jpg" srcset="img/works-1-mobile@2x.jpg 2x"
-                   alt="Станки и оборудование">
+                   alt="Станки и оборудование" loading="lazy">
+            </picture>
+            <div class="works__text-wrapper">
+              <p class="works__name">Компоненты и запчасти</p>
+              <p class="works__desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut.
+              </p>
+              <p class="works__price">18 000 руб.</p>
+            </div>
+          </div>
+          <div class="works__slide">
+            <picture>
+              <source type="img/webp" media="(min-width: 1440px)" srcset="img/works-3-desktop.webp, img/works-3-desktop@2x.webp">
+              <source type="img/webp" media="(min-width: 768px)" srcset="img/works-1-tablet.webp, img/works-1-tablet@2x.webp">
+              <source type="img/webp" srcset="img/works-1-mobile.webp, img/works-1-mobile@2x.webp">
+
+              <source media="(min-width: 1440px)" srcset="img/works-3-desktop.jpg, img/works-3-desktop@2x.jpg">
+              <source media="(min-width: 768px)" srcset="img/works-1-tablet.webp, img/works-1-tablet@2x.jpg">
+              <img class="works__img" src="img/works-1-mobile.jpg" srcset="img/works-1-mobile@2x.jpg 2x"
+                   alt="Станки и оборудование" loading="lazy">
             </picture>
             <div class="works__text-wrapper">
               <p class="works__name">Компоненты и запчасти</p>
@@ -257,7 +284,7 @@
       <div class="clients__card-wrapper">
         <div class="clients__card">
           <div class="clients__card-header-wrapper">
-            <img class="clients__logo" src="img/logo/logo-pdv.svg" alt="Логотип ПДВ">
+            <img class="clients__logo" src="img/logo/logo-pdv.svg" alt="Логотип ПДВ" loading="lazy">
             <div class="clients__info">
               ООО "ПДВ" ИНН 7329023100 КПП 732901001 433405, Ульяновская обл., Территория Портовой особой Экономической зоны, Проезд Первых Резидентов 3<br>
               Телефон: +7 8422 99 666 5 e-mail: info@pdv.ooo
@@ -282,7 +309,7 @@
               <td class="clients__item-value clients__item-value--pic">
                 <picture>
                   <source type="image/webp" srcset="img/client-image.webp">
-                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90">
+                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90" loading="lazy">
                 </picture>
               </td>
               <td class="clients__item-value clients__item-value--name">
@@ -310,7 +337,7 @@
               <td class="clients__item-value clients__item-value--pic">
                 <picture>
                   <source type="image/webp" srcset="img/client-image.webp">
-                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90">
+                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90" loading="lazy">
                 </picture>
               </td>
               <td class="clients__item-value clients__item-value--name">
@@ -338,7 +365,7 @@
               <td class="clients__item-value clients__item-value--pic">
                 <picture>
                   <source type="image/webp" srcset="img/client-image.webp">
-                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90">
+                  <img src="img/client-image.jpg" alt="Lorem ipsum dolor" width="90" height="90" loading="lazy">
                 </picture>
               </td>
               <td class="clients__item-value clients__item-value--name">
@@ -416,7 +443,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--rosatom" src="img/logo/logo-rosatom.png" alt="Росатом"
-                width="70" height="88">
+                width="70" height="88" loading="lazy">
             </div>
             <p class="partners__name">Росатом</p>
             <p class="partners__desc">Корпорация атомной энергии</p>
@@ -424,7 +451,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--gasprom" src="img/logo/logo-gasprom.svg" alt="Газпром"
-                width="119" height="57">
+                width="119" height="57" loading="lazy">
             </div>
             <p class="partners__name">Газпром</p>
             <p class="partners__desc">Энергетическая компания</p>
@@ -432,14 +459,15 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--rosneft" src="img/logo/logo-rosneft.png" alt="Роснефть"
-                width="111" height="88">
+                width="111" height="88" loading="lazy">
             </div>
             <p class="partners__name">Роснефть</p>
             <p class="partners__desc">Нефтегазовая компания</p>
           </div>
           <div class="partners__item">
             <div class="partners__logo-wrapper">
-              <img class="partners__logo partners__logo--roscosmos" src="img/logo/logo-roscosmos.svg" alt="Роскосмос" width="67" height="81">
+              <img class="partners__logo partners__logo--roscosmos" src="img/logo/logo-roscosmos.svg" alt="Роскосмос"
+                width="67" height="81" loading="lazy">
             </div>
             <p class="partners__name">Роскосмос</p>
             <p class="partners__desc">Корпорация в космической отрасли</p>
@@ -449,7 +477,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--lukoil" src="img/logo/logo-lukoil.svg" alt="Лукойл"
-                width="158" height="50">
+                width="158" height="50" loading="lazy">
             </div>
             <p class="partners__name">Лукойл</p>
             <p class="partners__desc">Нефтяная компания</p>
@@ -457,7 +485,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--interraoes" src="img/logo/logo-interraoes.png" alt="Интер РАО"
-                width="83" height="77">
+                width="83" height="77" loading="lazy">
             </div>
             <p class="partners__name">Интер РАО</p>
             <p class="partners__desc">Энергетическая компания</p>
@@ -465,7 +493,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--rostech" src="img/logo/logo-rostech.svg" alt="Ростех"
-                width="69" height="84">
+                width="69" height="84" loading="lazy">
             </div>
             <p class="partners__name">Ростех</p>
             <p class="partners__desc">Промышленная корпорация</p>
@@ -473,7 +501,7 @@
           <div class="partners__item">
             <div class="partners__logo-wrapper">
               <img class="partners__logo partners__logo--vtb" src="img/logo/logo-vtb.svg" alt="Банк ВТБ"
-                width="126" height="45">
+                width="126" height="45"- loading="lazy">
             </div>
             <p class="partners__name">Банк ВТБ</p>
             <p class="partners__desc">Коммерческий банк</p>
@@ -502,7 +530,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team1.webp">
-              <img class="team__img" src="img/team1.jpg" alt="Антон Макаров" width="100" height="100">
+              <img class="team__img" src="img/team1.jpg" alt="Антон Макаров" width="100" height="100" loading="lazy">
             </picture>
             <div class="team__text-wrapper">
               <p class="team__name">Антон Макаров</p>
@@ -541,7 +569,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team2.webp">
-              <img class="team__img" src="img/team2.jpg" alt="Елена Валерьева" width="100" height="100">
+              <img class="team__img" src="img/team2.jpg" alt="Елена Валерьева" width="100" height="100" loading="lazy">
             </picture>
           <div class="team__text-wrapper">
             <p class="team__name">Елена Валерьева</p>
@@ -580,7 +608,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team3.webp">
-              <img class="team__img" src="img/team3.jpg" alt="Иван Аркадьев" width="100" height="100">
+              <img class="team__img" src="img/team3.jpg" alt="Иван Аркадьев" width="100" height="100" loading="lazy">
             </picture>
           <div class="team__text-wrapper">
             <p class="team__name">Иван Аркадьев</p>
@@ -619,7 +647,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team4.webp">
-              <img class="team__img" src="img/team4.jpg" alt="Борис Вавилов" width="100" height="100">
+              <img class="team__img" src="img/team4.jpg" alt="Борис Вавилов" width="100" height="100" loading="lazy">
             </picture>
           <div class="team__text-wrapper">
             <p class="team__name">Борис Вавилов</p>
@@ -658,7 +686,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team5.webp">
-              <img class="team__img" src="img/team5.jpg" alt="Иван Аркадьев" width="100" height="100">
+              <img class="team__img" src="img/team5.jpg" alt="Иван Аркадьев" width="100" height="100" loading="lazy">
             </picture>
           <div class="team__text-wrapper">
             <p class="team__name">Иван Аркадьев</p>
@@ -697,7 +725,7 @@
           <div class="team__info-wrapper">
             <picture>
               <source type="image/webp" srcset="img/team6.webp">
-              <img class="team__img" src="img/team6.jpg" alt="Иван Аркадьев" width="100" height="100">
+              <img class="team__img" src="img/team6.jpg" alt="Иван Аркадьев" width="100" height="100" loading="lazy">
             </picture>
           <div class="team__text-wrapper">
             <p class="team__name">Иван Аркадьев</p>
@@ -847,17 +875,18 @@
         Eget sit amet tellus cras adipiscing.
       </p>
       <div class="video__video">
-        <iframe class="video__iframe" src="https://www.youtube.com/embed/i5T6Fnbq34c" title="Видео о нашей работе" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        Для просмотра видео включите выполнение JavaScript в вашем браузере.
       </div>
     </section>
 
   </main>
 
+<script src="scripts/video.js"></script>
+<script src="scripts/modernizr-webp.js"></script>
 <script src="scripts/poll.js"></script>
 <script src="scripts/clients.js"></script>
 <script src="scripts/partners-slider.js"></script>
 <script src="scripts/contact-us.js"></script>
-<script src="scripts/video.js"></script>
 
 </body>
 </html>
