@@ -22,10 +22,10 @@ const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('docs/css'))
     .pipe(minify())
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('docs/css'))
     .pipe(browser.stream());
 }
 
@@ -34,7 +34,7 @@ const styles = () => {
 const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('docs'));
 }
 
 // SVG Sprite
@@ -44,7 +44,7 @@ const svgsprite = () => {
     .pipe(svgstore({
       inlineSvg: true
     }))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("docs/img"));
 }
 
 // JS
@@ -56,7 +56,7 @@ const js = () => {
         'comments': false,
       },
     }))
-    .pipe(gulp.dest('build/scripts'));
+    .pipe(gulp.dest('docs/scripts'));
 }
 
 // Images
@@ -87,7 +87,7 @@ export const towebp = () => {
 // Clean
 
 export const clean = () => {
-  return del('build');
+  return del('docs');
 };
 
 // Copy
@@ -101,7 +101,7 @@ export const copy = () => {
   ], {
     base: "source"
   })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("docs"));
 }
 
 // Server
@@ -109,7 +109,7 @@ export const copy = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'docs'
     },
     cors: true,
     notify: false,
