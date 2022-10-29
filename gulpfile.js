@@ -96,6 +96,7 @@ export const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**/*",
+    "source/favicon.ico",
     "!source/img/sprite/*",
     "!source/img/sprite"
   ], {
