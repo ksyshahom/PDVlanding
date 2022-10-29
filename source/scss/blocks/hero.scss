@@ -46,8 +46,19 @@
   }
 }
 
+.hero__img-wrapper {
+  display: flex;
+  justify-content: center;
+
+  & picture {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
 .hero__img {
   display: block;
+  width: 100%;
 }
 
 @media (min-width: $tablet-width) {
@@ -104,6 +115,14 @@
 
     color: #363738;
     letter-spacing: 0.5px;
+  }
+
+  .hero__img-wrapper {
+    display: block;
+
+    & picture {
+      max-width: none;
+    }
   }
 }
 

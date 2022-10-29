@@ -62,6 +62,10 @@
   }
 }
 
+.no-js .clients__toggle {
+  display: none;
+}
+
 .clients__toggle-btn {
   content: "";
   position: absolute;
@@ -156,6 +160,18 @@
 
   &--active {
     display: flex;
+  }
+}
+
+@media (max-width: ($tablet-width - 1px)) {
+  .no-js .clients__item {
+    display: flex;
+
+    border-bottom: 2px #d7d7dd solid;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
 
