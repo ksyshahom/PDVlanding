@@ -112,20 +112,23 @@
   .services__list {
     @include shadow-card;
     display: flex;
-    justify-content: space-between;
-    padding: 39px 0 24px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 39px 0 0;
   }
 
   .services__item {
     display: block;
     width: math.div(100%, 3);
     padding: 0 105px 0 64px;
+    margin-bottom: 40px;
 
     background-color: transparent;
     box-shadow: none;
     border-radius: 0;
     border-right: 1px #d7d7dd solid;
 
+    &:last-child,
     &:nth-child(3n) {
       border-right: none;
     }

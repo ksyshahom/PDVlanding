@@ -16,6 +16,7 @@
 
 .team__color {
   width: 20px;
+  flex-shrink: 0;
 
   background-color: $main-color;
   border-top-left-radius: 10px;
@@ -24,6 +25,10 @@
 
 .team__info-wrapper {
   display: flex;
+
+  & picture {
+    flex-shrink: 0;
+  }
 }
 
 .team__img {
@@ -38,6 +43,7 @@
 .team__text-wrapper {
   padding-top: 24px;
   padding-right: 0;
+  flex-grow: 0;
 }
 
 .team__name {
@@ -124,7 +130,7 @@
   }
 
   .team__info-wrapper {
-    display: block;
+    flex-direction: column;
     padding: 25px 30px 27px;
   }
 
@@ -133,6 +139,9 @@
   }
 
   .team__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding-top: 14px;
   }
 
@@ -151,6 +160,7 @@
 
   .team__socials-list {
     margin-bottom: 0;
+    margin-top: auto;
   }
 
   .team__socials-icon {
