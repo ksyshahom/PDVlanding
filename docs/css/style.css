@@ -520,7 +520,8 @@ a {
   }
 }
 @media (min-width: 1440px) {
-  .page-main__advantages {
+  .page-main__partners,
+.page-main__advantages {
     margin-bottom: 58px;
   }
   .page-main__hero {
@@ -539,9 +540,6 @@ a {
 .page-main__steps,
 .page-main__video {
     margin-bottom: 120px;
-  }
-  .page-main__partners {
-    margin-bottom: 125px;
   }
   .page-main__contacts {
     margin-bottom: 140px;
@@ -801,19 +799,21 @@ a {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     display: flex;
-    justify-content: space-between;
-    padding: 39px 0 24px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 39px 0 0;
   }
   .services__item {
     display: block;
     width: 33.3333333333%;
     padding: 0 105px 0 64px;
+    margin-bottom: 40px;
     background-color: transparent;
     box-shadow: none;
     border-radius: 0;
     border-right: 1px #d7d7dd solid;
   }
-  .services__item:nth-child(3n) {
+  .services__item:last-child, .services__item:nth-child(3n) {
     border-right: none;
   }
   .services__item:nth-child(3n-2) {
@@ -2085,8 +2085,8 @@ a {
     line-height: 125%;
     margin-bottom: 78px;
   }
-  .partners__group:last-child .partners__item {
-    margin-bottom: 0;
+  .partners__group:last-child .partners__item:nth-last-child(2), .partners__group:last-child .partners__item:last-child {
+    margin-bottom: 67px;
   }
   .partners__item {
     width: 25%;
@@ -2130,6 +2130,7 @@ a {
 
 .team__color {
   width: 20px;
+  flex-shrink: 0;
   background-color: #0b7572;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -2137,6 +2138,9 @@ a {
 
 .team__info-wrapper {
   display: flex;
+}
+.team__info-wrapper picture {
+  flex-shrink: 0;
 }
 
 .team__img {
@@ -2150,6 +2154,7 @@ a {
 .team__text-wrapper {
   padding-top: 24px;
   padding-right: 0;
+  flex-grow: 0;
 }
 
 .team__name {
@@ -2232,13 +2237,16 @@ a {
     width: 30px;
   }
   .team__info-wrapper {
-    display: block;
+    flex-direction: column;
     padding: 25px 30px 27px;
   }
   .team__img {
     margin: 0;
   }
   .team__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding-top: 14px;
   }
   .team__name {
@@ -2254,6 +2262,7 @@ a {
   }
   .team__socials-list {
     margin-bottom: 0;
+    margin-top: auto;
   }
   .team__socials-icon--ig {
     width: 22px;
@@ -2477,6 +2486,7 @@ a {
     flex-shrink: 0;
   }
   .contacts__list {
+    width: 400px;
     padding-top: 21px;
     margin-bottom: 0;
   }
