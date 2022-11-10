@@ -145,8 +145,14 @@
 }
 
 .clients__table {
+  display: block;
+
   border-collapse: collapse;
   background-color: #F9F9FB;
+
+  tbody {
+    display: block;
+  }
 }
 
 .clients__table-head {
@@ -177,6 +183,7 @@
 
 .clients__item-value {
   @include text-m;
+  display: block;
   padding: 18px 0 15px;
   margin-left: 16px;
   width: calc(100% - 16px - 16px);
@@ -325,6 +332,14 @@
     display: none;
   }
 
+  .clients__table {
+    display: table;
+
+    tbody {
+      display: table-row-group;
+    }
+  }
+
   .clients__table-head {
     display: table-cell;
     padding: 10px 0;
@@ -370,6 +385,7 @@
     @include text-td;
     position: relative;
 
+    display: table-cell;
     padding: 16px;
 
     font-size: 14px;
@@ -433,6 +449,19 @@
       &:after {
         right: 16px;
       }
+    }
+  }
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .clients__item-value {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    .clients__item-value {
+      border: 1px #d7d7dd solid;
     }
   }
 

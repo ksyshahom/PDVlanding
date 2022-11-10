@@ -22,11 +22,14 @@
   display: none;
 }
 
+.hero__more-link-wrapper {
+  display: flex;
+}
+
 .hero__more-link {
   display: block;
   margin-bottom: 40px;
   padding-bottom: 1px;
-  width: fit-content;
 
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;

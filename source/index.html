@@ -13,7 +13,9 @@
 
   <script>
     document.documentElement.classList.remove("no-js");
+    document.createElement( "picture" ); // for picturefill
   </script>
+  <script src="scripts/picturefill.js" async></script>
 
   <link rel="stylesheet" href="css/style.min.css">
 
@@ -30,7 +32,9 @@
             доставкой товара до двери. <span class="hero__add-text">Настолько прозрачных сделок с Китаем вы еще не
             осуществляли.</span>
           </p>
-          <a class="hero__more-link" href="#steps">Узнать больше</a>
+          <div class="hero__more-link-wrapper">
+            <a class="hero__more-link" href="#steps">Узнать больше</a>
+          </div>
         </div>
         <div class="hero__img-wrapper">
           <picture>
@@ -199,7 +203,9 @@
               <p class="works__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut.
               </p>
-              <p class="works__price">20 000 руб.</p>
+              <div class="works__price-wrapper">
+                <p class="works__price">20 000 руб.</p>
+              </div>
             </div>
           </div>
           <div class="works__slide works__slide--active">
@@ -218,7 +224,9 @@
               <p class="works__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut.
               </p>
-              <p class="works__price">18 000 руб.</p>
+              <div class="works__price-wrapper">
+                <p class="works__price">18 000 руб.</p>
+              </div>
             </div>
           </div>
           <div class="works__slide works__slide--active">
@@ -237,7 +245,9 @@
               <p class="works__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut.
               </p>
-              <p class="works__price">18 000 руб.</p>
+              <div class="works__price-wrapper">
+                <p class="works__price">18 000 руб.</p>
+              </div>
             </div>
           </div>
           <div class="works__slide">
@@ -256,7 +266,9 @@
               <p class="works__desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut.
               </p>
-              <p class="works__price">18 000 руб.</p>
+              <div class="works__price-wrapper">
+                <p class="works__price">20 000 руб.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -882,6 +894,8 @@
 
   </main>
 
+<script src="scripts/svg4everybody.js"></script>
+<script>svg4everybody(); // run it now or whenever you are ready</script>
 <script src="scripts/video.js"></script>
 <script src="scripts/modernizr-webp.js"></script>
 <script src="scripts/poll.js"></script>
