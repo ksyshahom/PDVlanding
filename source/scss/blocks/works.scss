@@ -54,9 +54,12 @@
   margin-bottom: 17px;
 }
 
+.works__price-wrapper {
+  display: flex;
+}
+
 .works__price {
   @include h3-m;
-  width: fit-content;
   padding-bottom: 3px;
   margin-bottom: 0;
 

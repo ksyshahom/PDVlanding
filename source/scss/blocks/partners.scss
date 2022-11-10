@@ -42,11 +42,14 @@
 
 .partners__name {
   @include h3-m;
+  width: 100%;
   margin-bottom: 7px;
 }
 
 .partners__desc {
   @include text-m;
+  width: 100%;
+  
   font-size: 14px;
   line-height: 135%;
   margin-bottom: 0;
